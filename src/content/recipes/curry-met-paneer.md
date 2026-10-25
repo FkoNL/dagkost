@@ -59,6 +59,7 @@ steps:
   - Voeg de gepureerde tomaten en yoghurt toe. Laat zachtjes pruttelen tot een samenhangende saus ontstaat.
   - Voeg als laatste de paneer en doperwten toe. Laat zachtjes garen tot de doperwten gaar en de paneer goed warm zijn. Breng op smaak met zout en garneer met verse koriander.
 notes:
+  - Gebruik voor 3 personen 3 teentjes knoflook en 3 cm verse gember, beide fijngehakt.
   - Gebruik naar smaak 2 tot 3 eetlepels yoghurt voor de basishoeveelheid van 3 personen; de ingrediëntenlijst rekent met 2,5 eetlepel.
   - De totale bereidingstijd is een schatting.
 ---
