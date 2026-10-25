@@ -14,7 +14,7 @@ const { recipes, selectedSlug } = Astro.props;
     <ul id="recipe-list">
       {recipes.map((recipe) => (
         <li data-search={`${recipe.data.title} ${recipe.data.description} ${recipe.data.tags.join(' ')} ${recipe.data.diet.join(' ')}`.toLowerCase()}>
-          <a class:list={["recipe-link", { selected: recipe.slug === selectedSlug }]} href={`${import.meta.env.BASE_URL}/recepten/${recipe.slug}/`}>
+          <a class:list={["recipe-link", { selected: recipe.slug === selectedSlug }]} href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/recepten/${recipe.slug}/`}>
             <span>{recipe.data.title}</span><small>{totalTime(recipe)} min</small>
           </a>
         </li>

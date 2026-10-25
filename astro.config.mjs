@@ -1,10 +1,10 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// GitHub Pages project website.
+// Custom domain hosted on GitHub Pages.
 export default defineConfig({
-  site: 'https://fkonl.github.io',
-  base: '/dagkost',
+  site: 'https://dagkost.nl',
+  base: '/',
   integrations: [sitemap()],
   output: 'static'
 });
