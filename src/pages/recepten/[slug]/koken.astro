@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import RecipeDetail from '../../../components/RecipeDetail.astro';
+import { getRecipes } from '../../../lib/recipes';
+export async function getStaticPaths() {
+  const recipes = await getRecipes();
+  return recipes.map((recipe) => ({ params: { slug: recipe.slug }, props: { recipe } }));
+}
+const { recipe } = Astro.props;
+---
+<BaseLayout title={`Kookmodus: ${recipe.data.title} — Dagkost`}>
+  <header class="cookbar"><a href={`${import.meta.env.BASE_URL}/recepten/${recipe.slug}/`} aria-label="Terug naar recept">← <span>Terug naar recept</span></a><a class="wordmark" href={import.meta.env.BASE_URL}>dagkost<span>.</span></a><button id="wake-lock" type="button" aria-pressed="false">Scherm wakker houden</button></header>
+  <main><RecipeDetail {recipe} cookingMode={true} /></main>
+  <script>
+    let wakeLock: WakeLockSentinel | undefined;
+    const button = document.querySelector<HTMLButtonElement>('#wake-lock');
+    const supported = 'wakeLock' in navigator;
+    async function requestWakeLock() {
+      if (!supported) return;
+      try {
+        wakeLock = await navigator.wakeLock.request('screen');
+        wakeLock.addEventListener('release', () => {
+          wakeLock = undefined;
+          if (button) { button.textContent = 'Scherm wakker houden'; button.setAttribute('aria-pressed', 'false'); }
+        });
+        button!.textContent = 'Scherm blijft wakker';
+        button!.setAttribute('aria-pressed', 'true');
+      }
+      catch { button!.textContent = 'Scherm wakker houden'; }
+    }
+    button?.addEventListener('click', () => wakeLock ? wakeLock.release() : requestWakeLock());
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && button?.getAttribute('aria-pressed') === 'true') requestWakeLock(); });
+    if (!supported && button) { button.hidden = true; }
+  </script>
+</BaseLayout>
+<style>
+  .cookbar { border-bottom:1px solid var(--line); min-height:4.5rem; display:grid; align-items:center; grid-template-columns:1fr auto 1fr; padding:0 2rem; }.cookbar a:first-child { text-decoration:none; font-weight:700; }.cookbar .wordmark{font-size:1.65rem}.cookbar .wordmark span{color:var(--tomato)} #wake-lock { justify-self:end; border:1px solid var(--ink); color:var(--ink); background:transparent; padding:.55rem .75rem; cursor:pointer; font-size:.8rem; } #wake-lock[aria-pressed="true"]{background:var(--ink);color:white} @media(max-width:650px){.cookbar{padding:0 1rem;grid-template-columns:1fr auto}.cookbar .wordmark{display:none}.cookbar a:first-child span{display:none}#wake-lock{font-size:.72rem}}
+</style>

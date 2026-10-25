@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RecipeList from '../../components/RecipeList.astro';
+import RecipeDetail from '../../components/RecipeDetail.astro';
+import { getRecipes } from '../../lib/recipes';
+export async function getStaticPaths() {
+  const recipes = await getRecipes();
+  return recipes.map((recipe) => ({ params: { slug: recipe.slug }, props: { recipe, recipes } }));
+}
+const { recipe, recipes } = Astro.props;
+---
+<BaseLayout title={`${recipe.data.title} — Dagkost`}>
+  <main class="app-shell"><RecipeList {recipes} selectedSlug={recipe.slug} /><RecipeDetail {recipe} /></main>
+</BaseLayout>
+<style>.app-shell { display:grid; grid-template-columns:330px minmax(0,1fr); min-height:100vh; } @media(max-width:800px){.app-shell{display:block}}</style>
