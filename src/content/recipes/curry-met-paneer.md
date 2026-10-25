@@ -15,14 +15,13 @@ ingredients:
     item: komijnzaad
   - amount: 1
     item: ui
-  - amount: 1
-    unit: el
-    item: knoflookpasta
-    note: of fijngehakte knoflook naar smaak
-  - amount: 0.5
-    unit: el
-    item: gemberpasta
-    note: of fijngehakte verse gember naar smaak
+  - amount: 3
+    item: teentjes knoflook
+    note: fijngehakt
+  - amount: 3
+    unit: cm
+    item: verse gember
+    note: fijngehakt
   - amount: 1
     unit: tl
     item: gemalen koriander
@@ -61,6 +60,5 @@ steps:
   - Voeg als laatste de paneer en doperwten toe. Laat zachtjes garen tot de doperwten gaar en de paneer goed warm zijn. Breng op smaak met zout en garneer met verse koriander.
 notes:
   - Gebruik naar smaak 2 tot 3 eetlepels yoghurt voor de basishoeveelheid van 3 personen; de ingrediëntenlijst rekent met 2,5 eetlepel.
-  - Voor de basishoeveelheid kun je de knoflookpasta vervangen door 4 tot 6 fijngehakte teentjes knoflook en de gemberpasta door ongeveer 2,5 cm verse gember.
   - De totale bereidingstijd is een schatting.
 ---
