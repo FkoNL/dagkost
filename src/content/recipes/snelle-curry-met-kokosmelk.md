@@ -36,7 +36,8 @@ steps:
   - Kook de rijst volgens de aanwijzingen op de verpakking.
   - Verhit wat olie in een pan en bak de fijngesneden gember en knoflook 2 minuten.
   - Voeg de kerriekruiden toe en bak 1 minuut mee.
-  - Voeg de tomaten toe en verkruimel de bouillonblokjes erboven. Schenk de kokosmelk erbij en laat 5 tot 10 minuten zachtjes indikken.
+  - Voeg de tomaten toe en verkruimel de bouillonblokjes erboven, bak 5 minuten op hoog vuur tot de tomaten zacht worden.
+  - Schenk de kokosmelk erbij en laat 5 tot 10 minuten zachtjes indikken.
   - Voeg eventueel de doperwten óf diepvries spinazie toe en laat de curry dan nog 10 minuten op laag vuur staan, tot de groenten gaar en goed warm zijn.
   - Serveer met rijst.
 notes:
