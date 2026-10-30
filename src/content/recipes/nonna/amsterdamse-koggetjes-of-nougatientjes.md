@@ -1,3 +1,60 @@
+---
+title: Amsterdamse koggetjes of nougatientjes
+description: Knapperige koekjes met stukjes zelfgemaakte nougat.
+servings: 40
+yieldUnit: stuks
+prepTime: 0
+cookTime: 18
+tags: ["patisserie", "koekjes"]
+source: https://www.baksels.net
+importedFrom: https://www.receptenmaker.com/kookstand/?recipe=4496629
+ingredients:
+  - amount: 100
+    unit: g
+    item: lichtbruine rietsuiker
+    note: voor de nougat
+  - amount: 33
+    unit: g
+    item: water
+    note: voor de nougat
+  - amount: 16
+    unit: g
+    item: ongezouten roomboter
+    note: voor de nougat
+  - amount: 150
+    unit: g
+    item: zachte ongezouten grasroomboter
+    note: op kamertemperatuur; voor het deeg
+  - amount: 130
+    unit: g
+    item: witte basterdsuiker
+  - amount: 1
+    unit: g
+    item: zout
+    note: circa ¼ tl
+  - amount: 20
+    unit: g
+    item: losgeklopt ei
+    note: circa ½ ei
+  - amount: 150
+    unit: g
+    item: Zeeuwse bloem
+    note: patisseriebloem
+  - amount: 60
+    unit: g
+    item: zelfgemaakte nougat
+    note: uit bovenstaande bereiding
+steps:
+  - Verwarm rietsuiker, water en 16 g boter zonder te roeren tot 150 °C. Controleer met een geschikte thermometer. Giet de zeer hete karamel dun uit op een bakplaat met bakpapier. Laat afkoelen en snijd in stukjes.
+  - Verwarm de oven voor op 160 °C met boven- en onderwarmte.
+  - Roer de zachte boter glad. Roer achtereenvolgens basterdsuiker en zout, ei en bloem erdoor tot alles is opgenomen.
+  - Roer 60 g nougat door het deeg. Spuit met een glad spuitmondje van 13 mm dopjes van circa 2,5 cm op een bakplaat met bakpapier. Houd veel ruimte vrij, want de koekjes lopen sterk uit.
+  - Bak in het midden van de oven 16 tot 18 minuten, tot de randen goudbruin zijn.
+notes:
+  - De hoeveelheid nougat is volgens de bron genoeg voor twee keer dit recept; voor het deeg gebruik je 60 g.
+  - De genoemde tijd betreft alleen de baktijd. Voorbereiding en afkoelen zijn nog niet vastgesteld.
+---
+
 # Amsterdamse koggetjes of nougatientjes
 
 - Opbrengst: circa 40 koekjes
