@@ -1,6 +1,8 @@
 ---
 import { totalTime } from '../lib/recipes';
-const { recipes, selectedSlug } = Astro.props;
+const { recipes, selectedSlug, collection = 'dagkost' } = Astro.props;
+const root = import.meta.env.BASE_URL.replace(/\/$/, '');
+const recipeRoot = collection === 'nonna' ? `${root}/nonna` : `${root}/recepten`;
 ---
 <aside class="sidebar" aria-label="Receptenlijst">
   <div class="mobile-header">
@@ -12,6 +14,10 @@ const { recipes, selectedSlug } = Astro.props;
   </div>
   <p class="tagline">Snel, gezond<br />en vooral lekker.</p>
   <div id="recipe-menu">
+  <nav class="collection-switch" aria-label="Receptencollectie">
+    <a href={`${root}/`} aria-current={collection === 'dagkost' ? 'page' : undefined}>Dagkost</a>
+    <a href={`${root}/nonna/`} aria-current={collection === 'nonna' ? 'page' : undefined}>Nonna</a>
+  </nav>
   <div class="search-wrap">
     <label class="sr-only" for="recipe-search">Zoek een recept</label>
     <input id="recipe-search" type="search" placeholder="Zoek een recept" autocomplete="off" />
@@ -21,7 +27,7 @@ const { recipes, selectedSlug } = Astro.props;
     <ul id="recipe-list">
       {recipes.map((recipe) => (
         <li data-search={`${recipe.data.title} ${recipe.data.description} ${recipe.data.tags.join(' ')} ${recipe.data.diet.join(' ')}`.toLowerCase()}>
-          <a class:list={["recipe-link", { selected: recipe.slug === selectedSlug }]} href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/recepten/${recipe.slug}/`}>
+          <a class:list={["recipe-link", { selected: recipe.slug === selectedSlug }]} href={`${recipeRoot}/${recipe.slug}/`}>
             <span>{recipe.data.title}</span><small>{totalTime(recipe)} min</small>
           </a>
         </li>
@@ -68,6 +74,10 @@ const { recipes, selectedSlug } = Astro.props;
 </script>
 
 <style>
+  .collection-switch { display:flex; border:1px solid var(--ink); margin-bottom:1rem; }
+  .collection-switch a { flex:1; text-align:center; text-decoration:none; padding:.75rem .5rem; font-weight:700; }
+  .collection-switch a[aria-current="page"] { background:var(--ink); color:var(--white); }
+  .collection-switch a:focus-visible { outline:2px solid var(--tomato); outline-offset:2px; }
   .menu-toggle { display:none; }
   .menu-toggle:focus-visible { outline:2px solid var(--tomato); outline-offset:3px; }
   .sidebar { background:var(--cream); min-height:100vh; padding:2.3rem 2rem 1.5rem; display:flex; flex-direction:column; position:sticky; top:0; height:100vh; overflow:auto; }

@@ -91,5 +91,5 @@ steps:
 notes:
   - De bron vermeldt een totale bereidingstijd van 30 minuten; de verdeling in voorbereiding en koken is geschat.
   - Volgens de bron kun je ook light kokosmelk gebruiken of de kokosmelk vervangen door 250 ml slagroom of 250 ml half melk en half room.
-  - Proefimport uit de eerder uitgelezen kookstand. De inhoud is vertaald naar het Nederlands; niet gepubliceerd op Dagkost.
+  - Overgenomen uit Receptenmaker en vertaald naar het Nederlands.
 ---

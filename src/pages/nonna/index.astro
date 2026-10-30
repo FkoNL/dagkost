@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RecipeList from '../../components/RecipeList.astro';
+import RecipeDetail from '../../components/RecipeDetail.astro';
+import { getRecipes } from '../../lib/recipes';
+const recipes = await getRecipes('nonna');
+const featured = recipes.find((recipe) => recipe.data.featured) ?? recipes[0];
+---
+<BaseLayout title="Nonna — Dagkost">
+  <main class="app-shell">
+    <RecipeList collection="nonna" {recipes} selectedSlug={featured.slug} />
+    <RecipeDetail collection="nonna" recipe={featured} />
+  </main>
+</BaseLayout>
+
+<style>.app-shell { display:grid; grid-template-columns:330px minmax(0,1fr); min-height:100vh; } @media(max-width:800px){.app-shell{display:block}}</style>
